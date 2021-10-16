@@ -1,5 +1,5 @@
 local hotkey = require "hs.hotkey"
-local mash = {"ctrl", "cmd", "alt"}
+local mash = {"ctrl", "cmd"}
 
 -- https://github.com/dsanson/hs.tiling
 local tiling = require "hs.tiling"
