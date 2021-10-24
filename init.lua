@@ -1,12 +1,12 @@
 local hotkey = require "hs.hotkey"
-local mash = {"ctrl", "cmd"}
+local mash = {"ctrl", "alt"}
 
 -- https://github.com/dsanson/hs.tiling
 local tiling = require "hs.tiling"
 hotkey.bind(mash, "'", function() tiling.cycleLayout() end)
--- hotkey.bind(mash, "l", function() tiling.cycle(1) end)
--- hotkey.bind(mash, "j", function() tiling.cycle(-1) end)
--- hotkey.bind(mash, "k", function() tiling.promote() end)
+hotkey.bind(mash, "l", function() tiling.cycle(1) end)
+hotkey.bind(mash, "j", function() tiling.cycle(-1) end)
+hotkey.bind(mash, "k", function() tiling.promote() end)
 hotkey.bind(mash, ";", function() tiling.goToLayout("fullscreen") end)
 
 tiling.set('layouts', {
