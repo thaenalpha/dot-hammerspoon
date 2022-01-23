@@ -1,5 +1,6 @@
 local hotkey = require "hs.hotkey"
 local mash = {"ctrl", "alt"}
+local speech = require 'hs.speech'
 
 -- https://github.com/dsanson/hs.tiling
 local tiling = require "hs.tiling"
@@ -153,3 +154,19 @@ end
 hotkey.bind(mash, "[", toggleCaffeinate)
 caffeinateTrayIcon:setClickCallback(toggleCaffeinate)
 caffeinateSetIcon(sleepStatus)
+
+-- Init speaker.
+speaker = speech.new()
+
+-- Reload config.
+hs.hotkey.bind(
+   mash, "]", function ()
+        -- speaker:speak("Offline to reloading...")
+        hs.reload()
+end)
+
+-- We put reload notify at end of config, notify popup mean no error in config.
+hs.notify.new({title="Eason", informativeText="Eason, I am online!"}):send()
+
+-- Speak something after configuration success.
+speaker:speak("Eason, I am online!")
