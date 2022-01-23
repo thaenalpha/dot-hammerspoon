@@ -150,6 +150,6 @@ local function toggleCaffeinate()
     caffeinateSetIcon(sleepStatus)
 end
 
--- hs.hotkey.bind(hyper, "[", toggleCaffeinate)
+hotkey.bind(mash, "[", toggleCaffeinate)
 caffeinateTrayIcon:setClickCallback(toggleCaffeinate)
 caffeinateSetIcon(sleepStatus)
