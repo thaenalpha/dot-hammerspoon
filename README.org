@@ -1,0 +1,4 @@
+#+title: Hammerspoon Configuration
+This is my configuration file for Hammerspoon.
+
+You can put repository files under ~$HOME/.hammerspoon~ directory and click "reload-config" menu item to reload hammerspoon.
