@@ -98,7 +98,7 @@ hotkey.bind(mash, "p", function()
                hs.window.tiling.tileWindows(allScreenWindows, window:screen():fullFrame())
 end)
 
-
+-- https://github.com/manateelazycat/hammerspoon-config
 -- Maximize window when specify application started.
 local maximizeApps = {
     "/Applications/iTerm.app",
@@ -178,7 +178,7 @@ hotkey.bind(mash, "[", toggleCaffeinate)
 caffeinateTrayIcon:setClickCallback(toggleCaffeinate)
 caffeinateSetIcon(sleepStatus)
 
-
+-- https://github.com/wangshub/hammerspoon-config/blob/master/ime/ime.lua
 -- Auto swith input method app
 local function Chinese()
     hs.keycodes.currentSourceID("com.apple.inputmethod.SCIM.ITABC")
