@@ -178,6 +178,67 @@ hotkey.bind(mash, "[", toggleCaffeinate)
 caffeinateTrayIcon:setClickCallback(toggleCaffeinate)
 caffeinateSetIcon(sleepStatus)
 
+
+-- Auto swith input method app
+local function Chinese()
+    hs.keycodes.currentSourceID("com.apple.inputmethod.SCIM.ITABC")
+end
+
+local function English()
+    hs.keycodes.currentSourceID("com.apple.keylayout.ABC")
+end
+
+-- app to expected ime config
+local app2Ime = {
+    {'/Applications/iTerm.app', 'English'},
+    {'/Applications/Emacs.app', 'English'},
+    {'/Applications/Telegram.app', 'Chinese'},
+    {'/Applications/Xcode.app', 'English'},
+    {'/Applications/NeteaseMusic.app', 'Chinese'},
+    {'/Applications/微信.app', 'Chinese'},
+    {'/Applications/System Preferences.app', 'English'},
+}
+
+function updateFocusAppInputMethod()
+    local focusAppPath = hs.window.frontmostWindow():application():path()
+    for index, app in pairs(app2Ime) do
+        local appPath = app[1]
+        local expectedIme = app[2]
+
+        if focusAppPath == appPath then
+            if expectedIme == 'English' then
+                English()
+            else
+                Chinese()
+            end
+            break
+        end
+    end
+end
+
+-- helper hotkey to figure out the app path and name of current focused window
+hs.hotkey.bind(mash, ".", function()
+    hs.alert.show("App path:        "
+    ..hs.window.focusedWindow():application():path()
+    .."\n"
+    .."App name:      "
+    ..hs.window.focusedWindow():application():name()
+    .."\n"
+    .."IM source id:  "
+    ..hs.keycodes.currentSourceID())
+end)
+
+-- Handle cursor focus and application's screen manage.
+function applicationWatcher(appName, eventType, appObject)
+    if (eventType == hs.application.watcher.launched) then
+        updateFocusAppInputMethod()
+    end
+end
+
+appWatcher = hs.application.watcher.new(applicationWatcher)
+appWatcher:start()
+
+
 -- Init speaker.
 speaker = speech.new()
 
