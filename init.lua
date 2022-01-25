@@ -2,6 +2,9 @@ local hotkey = require "hs.hotkey"
 local mash = {"ctrl", "alt"}
 local speech = require 'hs.speech'
 
+-- Init.
+hs.window.animationDuration = 0 -- don't waste time on animation when resize window
+
 -- https://github.com/dsanson/hs.tiling
 local tiling = require "hs.tiling"
 hotkey.bind(mash, "'", function() tiling.cycleLayout() end)
@@ -94,6 +97,7 @@ hotkey.bind(mash, "p", function()
                local allScreenWindows = {window, table.unpack(window:otherWindowsSameScreen())}
                hs.window.tiling.tileWindows(allScreenWindows, window:screen():fullFrame())
 end)
+
 
 -- Maximize window when specify application started.
 local maximizeApps = {
