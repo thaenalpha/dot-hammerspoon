@@ -251,7 +251,7 @@ hs.hotkey.bind(
 end)
 
 -- We put reload notify at end of config, notify popup mean no error in config.
-hs.notify.new({title="Eason", informativeText="Eason, I am online!"}):send()
+hs.notify.new({title="Taen", informativeText="Taen, I am online!"}):send()
 
 -- Speak something after configuration success.
-speaker:speak("Eason, I am online!")
+speaker:speak("Taen, I am online!")
