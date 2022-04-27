@@ -193,11 +193,10 @@ end
 local app2Ime = {
     {'/Applications/iTerm.app', 'English'},
     {'/Applications/Emacs.app', 'English'},
-    {'/Applications/Telegram.app', 'Chinese'},
+    {'/Applications/Telegram.app', 'Thai'},
     {'/Applications/Xcode.app', 'English'},
-    {'/Applications/NeteaseMusic.app', 'Chinese'},
-    {'/Applications/微信.app', 'Chinese'},
-    {'/Applications/System Preferences.app', 'Chinese'},
+    {'/Applications/NeteaseMusic.app', 'Thai'},
+    {'/Applications/System Preferences.app', 'English'},
 }
 
 function updateFocusAppInputMethod()
