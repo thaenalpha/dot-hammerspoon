@@ -1,3 +1,5 @@
+-- Initialize --
+smash = {"⌘", "⌥", "⌃"}
 local hotkey = require "hs.hotkey"
 local mash = {"alt"}
 local speech = require 'hs.speech'
@@ -254,3 +256,31 @@ hs.notify.new({title="Taen", informativeText="Taen, I am online!"}):send()
 
 -- Speak something after configuration success.
 speaker:speak("Taen, I am online!")
+
+-- sfgcpw: APP SHORTCUT --
+hs.application.enableSpotlightForNameSearches(true)
+local function toggleApplication(name)
+  local app = hs.application.find(name)
+  if not app or app:isHidden() then
+    hs.application.launchOrFocus(name)
+  elseif hs.application.frontmostApplication() ~= app then
+    app:activate()
+  else
+    app:hide()
+  end
+end
+hotkey.bind(smash, "1", function() toggleApplication("Emacs.app") end)
+hotkey.bind(smash, "a", function() toggleApplication("Alfred 4") end)
+hotkey.bind(smash, "s", function() toggleApplication("System Preferences") end)
+hotkey.bind(smash, "d", function() hs.execute('/opt/homebrew/bin/emacsclient --eval "(emacs-everywhere)"') end)
+hotkey.bind(smash, "f", function() toggleApplication("Finder") end)
+hotkey.bind(smash, "w", function() toggleApplication("Firefox Nightly");
+                                     toggleApplication("Microsoft Teams");
+                                     toggleApplication("FortiClient");
+                                     local windowLayout = {
+                                          {"Firefox Nightly", nil, laptopScreen, hs.layout.left50,nil, nil},
+                                          {"Microsoft Teams", nil, laptopScreen, hs.layout.right50, nil, nil},
+                                          {"FortiClient", nil, laptopScreen, hs.layout.right50, nil, nil},
+                                     }
+                                     hs.layout.apply(windowLayout);
+                                     end)
