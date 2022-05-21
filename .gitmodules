@@ -1,3 +1,3 @@
 [submodule "hs/tiling"]
 	path = hs/tiling
-	url = https://github.com/dsanson/hs.tiling
+	url = git@github.com:Eason0210/hs.tiling.git
