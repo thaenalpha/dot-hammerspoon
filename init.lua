@@ -181,7 +181,8 @@ caffeinateSetIcon(sleepStatus)
 -- https://github.com/wangshub/hammerspoon-config/blob/master/ime/ime.lua
 -- Auto swith input method app
 local function Chinese()
-    hs.keycodes.currentSourceID("com.apple.inputmethod.SCIM.ITABC")
+    -- hs.keycodes.currentSourceID("com.apple.inputmethod.SCIM.ITABC")
+    hs.keycodes.currentSourceID("im.rime.inputmethod.Squirrel.Rime")
 end
 
 local function English()
@@ -190,13 +191,13 @@ end
 
 -- app to expected ime config
 local app2Ime = {
-    {'/Applications/iTerm.app', 'English'},
+    {'/Applications/iTerm.app', 'Chinese'},
     {'/Applications/Emacs.app', 'English'},
     {'/Applications/Telegram.app', 'Chinese'},
-    {'/Applications/Xcode.app', 'English'},
+    {'/Applications/Xcode.app', 'Chinese'},
     {'/Applications/NeteaseMusic.app', 'Chinese'},
     {'/Applications/微信.app', 'Chinese'},
-    {'/Applications/System Preferences.app', 'English'},
+    {'/Applications/System Preferences.app', 'Chinese'},
 }
 
 function updateFocusAppInputMethod()
