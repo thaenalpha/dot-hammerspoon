@@ -191,10 +191,10 @@ end
 
 -- app to expected ime config
 local app2Ime = {
-    {'/Applications/iTerm.app', 'Chinese'},
+    {'/Applications/iTerm.app', 'English'},
     {'/Applications/Emacs.app', 'English'},
     {'/Applications/Telegram.app', 'Chinese'},
-    {'/Applications/Xcode.app', 'Chinese'},
+    {'/Applications/Xcode.app', 'English'},
     {'/Applications/NeteaseMusic.app', 'Chinese'},
     {'/Applications/微信.app', 'Chinese'},
     {'/Applications/System Preferences.app', 'Chinese'},
