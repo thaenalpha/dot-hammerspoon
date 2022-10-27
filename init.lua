@@ -1,7 +1,7 @@
 -- Initialize --
-smash = {"⌘", "⌥", "⌃"}
+smash = {"⌃", "⌥", "⇧", "⌘"}  -- can use Karabiner-Elements bind this Hyper key.
 local hotkey = require "hs.hotkey"
-local mash = {"alt"}
+local mash = {"⌘", "⌥", "⌃"}
 local speech = require 'hs.speech'
 
 -- Init.
