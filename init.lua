@@ -76,7 +76,7 @@ hs.fnutils.each(grid, function(entry)
   end)
 end)
 
-hotkey.bind(smash, "/", function()
+hotkey.bind(mash, "/", function()
     local window = hs.window.focusedWindow()
     local otherScreen = hs.fnutils.find(hs.screen.allScreens(), function(s)
                                            return s ~= window:screen()
