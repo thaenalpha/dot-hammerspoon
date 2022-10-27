@@ -270,7 +270,7 @@ local function toggleApplication(name)
   end
 end
 hotkey.bind(smash, "1", function() toggleApplication("Emacs.app") end)
-hotkey.bind(smash, "a", function() toggleApplication("Alfred 4") end)
+hotkey.bind(smash, "a", function() toggleApplication("Alfred 5") end)
 hotkey.bind(smash, "s", function() toggleApplication("System Preferences") end)
 hotkey.bind(smash, "d", function() hs.execute('/opt/homebrew/bin/emacsclient --eval "(emacs-everywhere)"') end)
 hotkey.bind(smash, "f", function() toggleApplication("Finder") end)
